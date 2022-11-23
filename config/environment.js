@@ -4,7 +4,7 @@ module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'ember-app',
     environment,
-    rootURL: process.env.ROOT_URL || '/',
+    rootURL: 'currency-converter-ember/',
     locationType: 'history',
     GEOAPIFY_API_KEY: process.env.GEOAPIFY_API_KEY,
     EmberENV: {
