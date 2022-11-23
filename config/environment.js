@@ -4,7 +4,7 @@ module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'ember-app',
     environment,
-    rootURL: '/',
+    rootURL: process.env.rootURL || '\',
     locationType: 'history',
     GEOAPIFY_API_KEY: process.env.GEOAPIFY_API_KEY,
     EmberENV: {
