@@ -32,7 +32,9 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: build
 
   # Deployment job
   deploy:
