@@ -23,7 +23,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: copy env file
-        run: cp $GITHUB_ENV $GITHUB_WORKSPACE/.env || cat $GITHUB_WORKSPACE/.env
+        run: cp $GITHUB_ENV $GITHUB_WORKSPACE/.env 
+             cat $GITHUB_WORKSPACE/.env
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
