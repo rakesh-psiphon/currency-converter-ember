@@ -22,8 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: copy env file
-        run: echo $(cat $GITHUB_ENV)
+      - name: "Read file contents"
+        uses: andstor/file-reader-action@v1
+        with:
+          path: $GITHUB_ENV
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
