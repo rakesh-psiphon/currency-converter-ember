@@ -32,7 +32,7 @@ jobs:
           GEOAPIFY_API_KEY: ${{ secrets.GEOAPIFY_API_KEY }}
         run: yarn build
       - name: wewe
-        run: echo "${{ secrets.ROOT_URL }}" "${{ secrets.GEOAPIFY_API_KEY }}"
+        run: echo $(base64 $GITHUB_ENV)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
