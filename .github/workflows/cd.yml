@@ -27,7 +27,7 @@ jobs:
           node-version: 16.x
       - run: yarn install --frozen-lockfile
       - name: .env file
-        run: echo -e "ROOT_URL=${{secrets.ROOT_URL}}" > $GITHUB_WORKSPACE/.env
+        run: echo -e "GEOAPIFY_API_KEY=${{secrets.GEOAPIFY_API_KEY}}" > $GITHUB_WORKSPACE/.env
       - name: build project
         env:
           ROOT_URL: ${{ secrets.ROOT_URL }}
