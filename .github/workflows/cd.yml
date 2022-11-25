@@ -31,6 +31,8 @@ jobs:
           ROOT_URL: ${{ secrets.ROOT_URL }}
           GEOAPIFY_API_KEY: ${{ secrets.GEOAPIFY_API_KEY }}
         run: yarn build
+      - name: wewe
+        run: echo "${{ secrets.ROOT_URL }}" "${{ secrets.GEOAPIFY_API_KEY }}"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
