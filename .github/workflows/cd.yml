@@ -26,12 +26,11 @@ jobs:
         with:
           node-version: 16.x
       - run: yarn install --frozen-lockfile
-      - name: .env file
-        run: echo -e "GEOAPIFY_API_KEY=${{secrets.GEOAPIFY_API_KEY}}" > $GITHUB_WORKSPACE/.env
+      - run: |
+          touch $GITHUB_WORKSPACE/.env
+          echo ROOT_URL=$ROOT_URL >> $GITHUB_WORKSPACE/.env
+          echo GEOAPIFY_API_KEY=$GEOAPIFY_API_KEY >> $GITHUB_WORKSPACE/.env
       - name: build project
-        env:
-          ROOT_URL: ${{ secrets.ROOT_URL }}
-          GEOAPIFY_API_KEY: ${{ secrets.GEOAPIFY_API_KEY }}
         run: yarn build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
