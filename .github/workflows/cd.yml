@@ -28,8 +28,8 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: |
           touch $GITHUB_WORKSPACE/.env
-          echo ROOT_URL=$ROOT_URL >> $GITHUB_WORKSPACE/.env
-          echo GEOAPIFY_API_KEY=$GEOAPIFY_API_KEY >> $GITHUB_WORKSPACE/.env
+          echo ROOT_URL=${{ secrets.ROOT_URL }} >> $GITHUB_WORKSPACE/.env
+          echo GEOAPIFY_API_KEY=${{ secrets.GEOAPIFY_API_KEY }} >> $GITHUB_WORKSPACE/.env
       - name: build project
         run: yarn build
       - name: Upload artifact
